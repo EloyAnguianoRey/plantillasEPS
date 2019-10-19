@@ -1,0 +1,175 @@
+\documentclass[numerado,carta]{plantillasEPS} % Las opciones compatibles con la opción carta son: numerado y serif
+
+\title{Guía de instalación, compilación y comandos del estilo plantillasEPS} % Título del acta
+
+\begin{document}
+
+\chapter{Instalación}
+
+Los procesos de instalación son distintos en cada sistema operativo. Se puede descargar el zip disponible en la página web o descargar la versión de desarrollo de \href{https://github.com/EloyAnguianoRey/plantillasEPS}{https://github.com/EloyAnguianoRey/plantillasEPS}.
+
+\section{Linux}
+
+Descargar los ficheros. En un navegador de archivos haz doble click en todos los archivos ttf para que se instalen.
+
+Ejecuta los siguientes comandos:
+\begin{enumerate}
+    \item sudo mkdir -p /usr/share/texmf/tex/latex/uam
+    \item sudo mv *.cls /usr/share/texmf/tex/latex/uam
+    \item sudo mv UAM* /usr/share/texmf/tex/latex/uam
+    \item sudo mv ESP* /usr/share/texmf/tex/latex/uam
+    \item sudo texhash
+    \item rm *.ttf
+\end{enumerate}
+
+Los archivos restantes son ejemplos de uso que pueden ser guardados en cualquier directorio de usuario y modificados. Así mismo puede borrarse el archivo firma-picasso.jpg y digitalizar la firma personal para firmar los documentos automáticamente.
+
+
+\section{Windows\textsuperscript{\texttrademark}}
+
+Es necesario instalar MiKTeX completo e instalar manualmente algunos paquetes así como este estilo.
+
+Las indicaciones que se presentan a continuación no han sido probadas y sólo son indicaciones que teóricamente deberían funcionar pero si no lo hacen, el creador de este estilo agradecería que se comunicase qué instrucción no funciona.
+
+\begin{enumerate}
+  \item Descomprimir el zip.
+  \item Hacer doble-click en todos los archivos .ttf y borrarlos.
+  \item Mover todos los archivos .tex a un directorio de usuario. 
+  \item Crear el directorio c:{\textbackslash}localtexmf como administrador de Windows.
+  \item Copiar el resto de los archivos a este directorio.
+  \item Activar dicho directorio como directorio de estilos de latex para ello es necesario utilizar una de las siguientes dos opciones:
+  \begin{enumerate}
+    \item Usando el GUI de MiKTeX:
+    \begin{enumerate} 
+      \item En el menú Inicio, en la entrada MiKTeX, abrir la configuración <<Configuración (Administrador)>> y se abrirá la ventana <<Opciones MiKTeX>>.
+      \item En la pestaña <<Raíces>> hay que hacer clic en <<Añadir>> y elegir c:{\textbackslash}localtexmf.
+      \item Ahora la parte más importante: en la pestaña <<General>> hay que hacer clic en <<Actualizar FNDB>> (FNDB = File Name Data Base). En algunos casos, especialmente si hay nuevas fuentes instaladas, hay que pulsar también el botón <<Actualizar Formatos>>.
+    \end{enumerate}
+    \item En la línea de comandos (siempre añadiendo \texttt{--admin} para actuar como administrador y opcionalmente \texttt{--verbose}):
+    \begin{enumerate}
+      \item Ejecutar \texttt{initexmf --register-root=c:{\textbackslash}localtexmf}
+      \item Ejecutar \texttt{initexmf --update-fndb}
+    \end{enumerate}
+  \end{enumerate}
+\end{enumerate}
+
+Dado que no dispongo de ningún ordenador en este sistema operativo este apartado se actualizará adecuadamente en el momento en el que algún estudiante me comunique cómo lo ha realizado o me solicite ayuda para instalarlo.
+
+\section{MacOS}
+
+En el caso de querer instalar el estilo en este sistema es necesario instalar MacTex. Para ello se puede ir a la página oficial de MacTex pinchando \href{aquí}{http://tug.org/mactex} y seguir las instrucciones correspondientes con todas las actualizaciones necesarias. Dependiendo de la versión de MacTex este se instala en el directorio /usr/local/texlive/XXXX donde XXXX es el año de la versión de MacTex que se esté instalando y cuyo valor es necesario saber para instalar correctamente el estilo.
+
+Descomprime el archivo .zip y haz doble-click en todos los archivos .ttf. Posteriormente hay que ejecutar los siguientes comandos:
+\begin{itemize}
+    \item sudo mkdir -p /usr/local/texlive/XXXX/texmf-dist/tex/LaTeXe/uam
+    \item sudo mv *.cls /usr/local/texlive/XXXX/texmf-dist/tex/LaTeXe/uam
+    \item sudo mv UAM* /local/texlive/XXXX/texmf-dist/tex/LaTeXe/uam
+    \item sudo mv ESP* /local/texlive/XXXX/texmf-dist/tex/LaTeXe/uam
+    \item sudo texhash
+    \item rm *.ttf
+\end{itemize}
+
+Los archivos restantes son ejemplos de uso que pueden ser guardados en cualquier directorio de usuario y modificados. Así mismo puede borrarse el archivo firma-picasso.jpg y digitalizar la firma personal para firmar los documentos automáticamente.
+
+
+\section{Overleaf}
+Descomprimir el archivo \.zip y subir todos los ficheros al proyecto que crees a estos efectos. Cambiar en el <<Menu>> el <<Compiler>> a <<XeLaTeX>>. Todos los archivos \.tex son modificables.
+
+Así mismo puede borrarse el archivo firma-picasso.jpg y digitalizar la firma personal para firmar los documentos automáticamente.
+    
+\chapter{Compilación}
+
+La compilación debe realizarse con el comando xelatex en lugar del tradicional pdflatex.
+
+\chapter{Comandos}
+
+Se puede acudir a los ejemplos adjuntos al estilo para ver el uso de los comandos y estilos aunque es aconsejable leer este documento.
+
+Los comandos {\textbackslash}chapter, {\textbackslash}section y {\textbackslash}subsection tienen el uso tradicional de \LaTeX. Divisiones inferiores no están redefinidas y su uso puede provocar resultados indeseados. En el uso con la opción carta nunca se numeran las secciones.
+
+Se dispone de un nuevo entorno útil para actas que es el entorno <<asisten>> que es un entorno de descripción especialmente diseñado para describir la asistencia en las actas.
+
+\section{Comandos de firma y fecha}
+Se dispone del comando \textbf{{\textbackslash}firmado} que tiene 5 parámetros:
+\begin{enumerate}
+    \item El parámetro es optativo y es el ancho de la firma. Si no se pone o se deja en blanco: 5cm
+    \item El parámetro optativo y es la distancia del texto a la firma. Si no se pone: en la parte baja de la última página. Se puede no poner pero no se puede dejar vacío.
+    \item El parámetro es obligatorio y es el nombre del firmante.
+    \item El parámetro es optativo y es la altura de la imagen o si no se especifica imagen el espacio dejado para la firma. Si no se pone o se deja en blanco: 2cm.
+    \item El parámetro es optativo y es el nombre de la imagen con la firma sin extensión. Si no se pone o se deja vacío es sin imagen de firma.
+\end{enumerate}
+
+Se dispone del comando \textbf{{\textbackslash}firmadofechado} que tiene 6 parámetros:
+\begin{enumerate}
+    \item El parámetro es optativo y es el ancho de la firma. Si no se pone o se deja en blanco: 5cm
+    \item El parámetro optativo y es la distancia del texto a la firma. Si no se pone: en la parte baja de la última página. Se puede no poner pero no se puede dejar vacío.
+    \item El parámetro es obligatorio y es el nombre del firmante.
+    \item El parámetro es obligatorio y es la fecha. Se puede dejar vacío y entonces será la fecha de compilación.
+    \item El parámetro es optativo y es la altura de la imagen o si no se especifica imagen el espacio dejado para la firma. Si no se pone o se deja en blanco: 2cm.
+    \item El parámetro es optativo y es el nombre de la imagen con la firma sin extensión. Si no se pone o se deja vacío es sin imagen de firma.
+\end{enumerate}
+
+Es importante indicar que en este comando el primer parámetro optativo es obligatorio ponerlo aunque sea vacío si se quiere indicar el segundo; y que el quinto parámetro optativo es obligatorio ponerlo aunque sea vacío si se quiere indicar el sexto.
+
+Se dispone del comando \textbf{{\textbackslash}fecha} que tiene un parámetro opcional que es la fecha. Si no se indica la fecha será la del día de compilación.
+
+\section{Opciones del estilo}
+\subsection{Opción <<tarjeta>>}
+En el fichero tarjeta.tex pueden verse varios ejemplos de uso. Sólo se puede usar uno de ellos cada vez con lo que es necesario eliminar los comentarios el que se va a usar y comentar el que está activo.
+
+Esta opción anula a cualquier otra opción. Con esta opción no es necesario iniciar un documento ni finalizarlo sólo utilizar uno de los siguientes comandos:
+\begin{description}
+    \item[{\textbackslash}tarjetas:] Crea múltiples tarjetas con marcas de corte. Los parámetros son los siguientes:
+    \begin{enumerate}
+        \item Nombre (obligatorio).
+        \item Nombre cara B (optativo): usa el primero en caso de no indicarse.
+        \item Cargo cara A (obligatorio).
+        \item Cargo cara B (obligatorio).
+        \item Dirección (obligatorio).
+        \item Desplazamiento en mm (optativo): desplaza toda la impresión en la cantidad indicada. Útil para impresoras que no son a doble cara para ajustar la impresión.
+    \end{enumerate}
+    \item[{\textbackslash}tarjeta:] Crea una tarjeta a doble cara. Los parámetros son los siguientes:
+    \begin{enumerate}
+        \item Nombre (obligatorio).
+        \item Nombre cara B (optativo): usa el primero en caso de no indicarse.
+        \item Cargo cara A (obligatorio).
+        \item Cargo cara B (obligatorio).
+        \item Dirección (obligatorio).
+    \end{enumerate}
+    \item[{\textbackslash}tarjetasimple:] Crea una tarjeta de una sola cara. Los parámetros son los siguientes:
+    \begin{enumerate}
+        \item Nombre (obligatorio).
+        \item Cargo (obligatorio).
+        \item Dirección (obligatorio).
+    \end{enumerate}
+\end{description}
+
+\subsection{Opción <<invitacion>>}
+
+En el fichero invitacion.ex pueden verse un ejemplo de uso. 
+
+Esta opción anula a cualquier otra opción. Con esta opción no es necesario iniciar un documento ni finalizarlo sólo utilizar uno de el comando {\textbackslash}invitacion con los siguientes parámetros obligatorios:
+\begin{enumerate}
+    \item Invitante.
+    \item Acto.
+    \item Descripción.
+    \item Lugar, fecha y hora.
+    \item Contacto para confirmación.
+\end{enumerate}
+
+\subsection{Opción <<carta>> y sin opción de tipo}
+    Pueden verse los ejemplos correspondientes en acta.tex y carta.tex.
+    
+    En ambos casos se aplican los comandos restantes indicados en la sección de comandos. Los formatos son muy similares cambiando únicamente el tipo de logos de la primera página y el tipo de letra de los capítulos y secciones.
+
+\subsection{Opción <<serif>>}
+Utiliza la tipología serif (Berthold Walbaum) para todo el texto. El valor por defecto salvo para algunos elementos es sanserif (Frank-light). Que son las tipologías definidas en la imagen institucional de la UAM.
+
+\subsection{Opción <<numerado>>}
+Numera todas las páginas.
+
+\section{Características especiales}
+
+Todos los logos y referencias a la UAM o a la EPS están hiperreferenciadas. Así mismo, en el encabezamiento si se pone, la dirección de correo está también hiperreferenciada.
+
+\end{document} 
