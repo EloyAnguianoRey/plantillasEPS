@@ -218,7 +218,7 @@
         \vspace*{2mm}
         \Telefon\ \telefonoaux\\
         \ifx&\movilaux&\else\Mobilefone\ \movilaux\\\fi%
-        \Email\ \href{mailto://\emailaux}{\emailaux}\\%
+        \Email\ \href{mailto:\emailaux}{\emailaux}\\%
         \vspace*{2mm}
         Escuela Politécnica Superior\\%
         Universidad Autónoma de Madrid\\%
@@ -301,11 +301,7 @@
         \renewcommand{\headrulewidth}{0pt}%
         \renewcommand{\footrulewidth}{0pt}%
         \fancyput*{\mbox{}}%
-        \thisfancyput*(\dimexpr -1in+1.05cm,\dimexpr 1in-3.93cm){\href{https://www.uam.es}{\pgfuseimage{UAMbig}}}%
-        \fancyput*{\mbox{}}%
         \fancyput*(\dimexpr -1in+1.3cm,\dimexpr 1in-2.07cm){\href{https://www.uam.es}{\pgfuseimage{UAMsmall}}}%
-        \fancyput*{\mbox{}}%
-        \thisfancyput*(\dimexpr -1in + \paperwidth -4.98cm,\dimexpr 1in-3.93cm){\href{https://www.eps.uam.es}{\pgfuseimage{EPSbig}}}%
         \fancyput*{\mbox{}}%
         \fancyput*(\dimexpr -1in + \paperwidth -6.56cm,\dimexpr 1in-2.07cm){\href{https://www.eps.uam.es}{\pgfuseimage{EPSsmall}}}%
         \fancyput*{\mbox{}}%
@@ -315,17 +311,21 @@
         \fancyput*{\mbox{}}%
         \fancyput*(\dimexpr -1in+18.8cm,\dimexpr 1in-29.7cm){\color{uamblue}\rule{1pt}{1cm}}%
         \fancyput*{\mbox{}}%
-        \fancyput*(11.6cm,-25.6cm){\fontsize{9}{10}\selectfont\color{uamblue}\href{www.uam.es}{Universidad Autónoma de Madrid/www.uam.es}}%
+        \fancyput*(\dimexpr 28mm-1in,-25.6cm){\fontsize{9}{10}\selectfont\color{uamblue}{\serif Universidad Autónoma de Madrid}}%
         \fancyput*{\mbox{}}%
-        \fancyput*(-2cm,-25.6cm){\fontsize{9}{10}\selectfont\color{uamblue}\href{www.eps.uam.es}{Escuela Politécnica Superior/www.eps.uam.es}}%
+        \fancyput*(13cm,-25.6cm){\fontsize{9}{10}\selectfont\color{uamblue}{\serif Escuela Politécnica Superior}}%
         \fancyput*{\mbox{}}%
         \thisfancyput*(\dimexpr -1in+18.8cm,\dimexpr 1in-27.3cm){\color{uamblue}\rule{1pt}{23.6cm}}%
         \fancyput*{\mbox{}}%
         \thisfancyput*(\dimexpr -1in+18.8cm,\dimexpr 1in-29.7cm){\color{uamblue}\rule{1pt}{1cm}}%
         \fancyput*{\mbox{}}%
-        \thisfancyput*(11.6cm,-25.6cm){\fontsize{9}{10}\selectfont\color{uamblue}\href{www.uam.es}{Universidad Autónoma de Madrid/www.uam.es}}%
+        \thisfancyput*(\dimexpr -1in + \paperwidth -4.98cm,\dimexpr 1in-3.93cm){\href{https://www.eps.uam.es}{\pgfuseimage{EPSbig}}}%
         \fancyput*{\mbox{}}%
-        \thisfancyput*(-2cm,-25.6cm){\fontsize{9}{10}\selectfont\color{uamblue}\href{www.eps.uam.es}{Escuela Politécnica Superior/www.eps.uam.es}}%
+        \thisfancyput*(\dimexpr -1in+1.05cm,\dimexpr 1in-3.93cm){\href{https://www.uam.es}{\pgfuseimage{UAMbig}}}%
+        \fancyput*{\mbox{}}%
+        \thisfancyput*(\dimexpr 28mm-1in,-25.6cm){\fontsize{9}{10}\selectfont\color{uamblue}{\serif Universidad Autónoma de Madrid}}%
+        \fancyput*{\mbox{}}%
+        \thisfancyput*(13cm,-25.6cm){\fontsize{9}{10}\selectfont\color{uamblue}{\serif Escuela Politécnica Superior}}%
         \parskip = 1.7ex%
         \parindent = 0em%
         \impencabezamiento%
@@ -367,11 +367,7 @@
         \renewcommand{\headrulewidth}{0pt}%
         \renewcommand{\footrulewidth}{0pt}%
         \fancyput*{\mbox{}}%
-        \thisfancyput*(\dimexpr -1in+1.53cm,\dimexpr 1in-2.76cm){\href{https://www.uam.es}{\pgfuseimage{UAMbig}}}%
-        \fancyput*{\mbox{}}%
         \fancyput*(\dimexpr -1in+1.3cm,\dimexpr 1in-2.07cm){\href{https://www.uam.es}{\pgfuseimage{UAMsmall}}}%
-        \fancyput*{\mbox{}}%
-        \thisfancyput*(\dimexpr -1in + \paperwidth -9.12cm,\dimexpr 1in-2.76cm){\href{https://www.eps.uam.es}{\pgfuseimage{EPSbig}}}%
         \fancyput*{\mbox{}}%
         \fancyput*(\dimexpr -1in + \paperwidth -6.56cm,\dimexpr 1in-2.07cm){\href{https://www.eps.uam.es}{\pgfuseimage{EPSsmall}}}%
         \fancyput*{\mbox{}}%
@@ -381,17 +377,21 @@
         \fancyput*{\mbox{}}%
         \fancyput*(\dimexpr -1in+18.8cm,\dimexpr 1in-29.7cm){\color{uamblue}\rule{1pt}{1cm}}%
         \fancyput*{\mbox{}}%
-        \fancyput*(11.6cm,-25.6cm){\fontsize{9}{10}\selectfont\color{uamblue}\href{www.uam.es}{Universidad Autónoma de Madrid/www.uam.es}}%
+        \fancyput*(\dimexpr 28mm-1in,-25.6cm){\fontsize{9}{10}\selectfont\color{uamblue}{\serif Universidad Autónoma de Madrid}}%
         \fancyput*{\mbox{}}%
-        \fancyput*(-2cm,-25.6cm){\fontsize{9}{10}\selectfont\color{uamblue}\href{www.eps.uam.es}{Escuela Politécnica Superior/www.eps.uam.es}}%
+        \fancyput*(13cm,-25.6cm){\fontsize{9}{10}\selectfont\color{uamblue}{\serif Escuela Politécnica Superior}}%
+        \fancyput*{\mbox{}}%
+        \thisfancyput*(\dimexpr -1in + \paperwidth -9.12cm,\dimexpr 1in-2.76cm){\href{https://www.eps.uam.es}{\pgfuseimage{EPSbig}}}%
+        \fancyput*{\mbox{}}%
+        \thisfancyput*(\dimexpr -1in+1.53cm,\dimexpr 1in-2.76cm){\href{https://www.uam.es}{\pgfuseimage{UAMbig}}}%
+        \fancyput*{\mbox{}}%
+        \thisfancyput*(\dimexpr 28mm-1in,-25.6cm){\fontsize{9}{10}\selectfont\color{uamblue}{\serif Universidad Autónoma de Madrid}}%
+        \fancyput*{\mbox{}}%
+        \thisfancyput*(13cm,-25.6cm){\fontsize{9}{10}\selectfont\color{uamblue}{\serif Escuela Politécnica Superior}}%
         \fancyput*{\mbox{}}%
         \thisfancyput*(\dimexpr -1in+18.8cm,\dimexpr 1in-27.3cm){\color{uamblue}\rule{1pt}{23.6cm}}%
         \fancyput*{\mbox{}}%
         \thisfancyput*(\dimexpr -1in+18.8cm,\dimexpr 1in-29.7cm){\color{uamblue}\rule{1pt}{1cm}}%
-        \fancyput*{\mbox{}}%
-        \thisfancyput*(11.6cm,-25.6cm){\fontsize{9}{10}\selectfont\color{uamblue}\href{www.uam.es}{Universidad Autónoma de Madrid/www.uam.es}}%
-        \fancyput*{\mbox{}}%
-        \thisfancyput*(-2cm,-25.6cm){\fontsize{9}{10}\selectfont\color{uamblue}\href{www.eps.uam.es}{Escuela Politécnica Superior/www.eps.uam.es}}%
         \parskip = 1.7ex%
         \parindent = 0em%
         \impencabezamiento%
