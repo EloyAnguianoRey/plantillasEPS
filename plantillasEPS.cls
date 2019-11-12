@@ -31,7 +31,7 @@
 \@ifpackageloaded{marvosym}{}{\RequirePackage{marvosym}}%
 \@ifpackageloaded{xcolor}{}{\RequirePackage{xcolor}}%
 \@ifpackageloaded{fancyhdr}{}{\RequirePackage{fancyhdr}}%
-\@ifpackageloaded{hyperref}{}{\RequirePackage{hyperref}}%
+\@ifpackageloaded{hyperref}{}{\RequirePackage[colorlinks=False, pdfborder={0 0 0}]{hyperref}}%
 \@ifpackageloaded{xparse}{}{\RequirePackage{xparse}}%
 \@ifpackageloaded{xeCJK}{}{\RequirePackage{xeCJK}}%
 
